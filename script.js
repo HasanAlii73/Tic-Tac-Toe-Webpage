@@ -50,7 +50,7 @@ function Player(name, mark){
     return {name, mark};
 }
 
-function Game(){
+function playGame(){
     const game = new Gameboard();
     const p1 = new Player('hsn', 'x');
     const p2 = new Player('ali', 'o');
@@ -95,4 +95,4 @@ function Game(){
     }
     console.log(game.getGameBoard());
 }
-Game();
+// playGame();

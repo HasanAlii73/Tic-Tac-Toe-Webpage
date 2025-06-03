@@ -3,11 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tic-Tac-Toe</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>Tic-Tac-Toe</h1>
+    <div class="playersContainer">
+        <div class="playerOne">
+            <label for="playerOneName">Player (X):</label>
+            <input type="text" name="playerOneName" class="playerOneName playerName">
+        </div>
+        <div class="playerTwo">
+            <label for="playerTwoName">Player (O):</label>
+            <input type="text" name="playerTwoName" class="playerTwoName playerName">
+        </div>
+        <button class="btnStart">Start Game</button>
+        <p class="comment">Select players and start the game</p>
+    </div>
+    <div class="gameContainer">
+        <div class="cell" data-index="0" style="cursor: not-allowed;"></div>
+        <div class="cell" data-index="1" style="cursor: not-allowed;"></div>
+        <div class="cell" data-index="2" style="cursor: not-allowed;"></div>
+        <div class="cell" data-index="3" style="cursor: not-allowed;"></div>
+        <div class="cell" data-index="4" style="cursor: not-allowed;"></div>
+        <div class="cell" data-index="5" style="cursor: not-allowed;"></div>
+        <div class="cell" data-index="6" style="cursor: not-allowed;"></div>
+        <div class="cell" data-index="7" style="cursor: not-allowed;"></div>
+        <div class="cell" data-index="8" style="cursor: not-allowed;"></div>
+    </div>
+    <div class="restartGameContainer">
+        <button class="restartGame">Restart Game</button>
+    </div>
 </body>
 </html>
