@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Tic-Tac-Toe</h1>
     <div class="playersContainer">
-        <div class="playerOne">
-            <label for="playerOneName">Player (X):</label>
-            <input type="text" name="playerOneName" class="playerOneName playerName">
-        </div>
-        <div class="playerTwo">
-            <label for="playerTwoName">Player (O):</label>
-            <input type="text" name="playerTwoName" class="playerTwoName playerName">
-        </div>
-        <button class="btnStart">Start Game</button>
+        <form class="frmPlayersName">
+            <div class="playerOne">
+                <label for="playerOneName">Player (X):</label>
+                <input type="text" name="playerOneName" class="playerOneName playerName">
+            </div>
+            <div class="playerTwo">
+                <label for="playerTwoName">Player (O):</label>
+                <input type="text" name="playerTwoName" class="playerTwoName playerName">
+            </div>
+            <button class="btnStart" type="submit">Start Game</button>
+        </form>
         <p class="comment">Select players and start the game</p>
     </div>
     <div class="gameContainer">

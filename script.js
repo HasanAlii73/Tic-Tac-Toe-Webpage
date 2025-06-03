@@ -1,3 +1,7 @@
+const form = document.querySelector(".frmPlayersName");
+const comment = document.querySelector(".comment");
+const cell = document.querySelector(".cell");
+
 function Gameboard(){
     const gameboard = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
     let winner = 0;
@@ -50,15 +54,15 @@ function Player(name, mark){
     return {name, mark};
 }
 
-function playGame(){
+function playGame(playerOneName, playerTwoName){
     const game = new Gameboard();
-    const p1 = new Player('hsn', 'x');
-    const p2 = new Player('ali', 'o');
+    const p1 = new Player(playerOneName, 'x');
+    const p2 = new Player(playerTwoName, 'o');
 
     for(let i=0; i<9; i++){
 
         if(i%2 === 0){
-            let userInput = prompt(`${p1.name}: where you will put (${p1.mark})`, "Number");
+            comment.textContent = `${p1.name}'s turn (${p1.mark})`;
             if (userInput !== null) {
                 if(!(game.changeValue(userInput, p1.mark)))
                     i--;
@@ -71,7 +75,7 @@ function playGame(){
             }
         }
         else{
-            let userInput = prompt(`${p2.name}: where you will put (${p2.mark})`, "Number");
+            comment.textContent = `${p2.name}'s turn (${p2.mark})`;
             if (userInput !== null) {
                 if(!(game.changeValue(userInput, p2.mark)))
                     i--;
@@ -95,4 +99,18 @@ function playGame(){
     }
     console.log(game.getGameBoard());
 }
+
+form.addEventListener("submit", (event) =>{
+    event.preventDefault();
+
+    const playerOneName = document.querySelector(".playerOneName").value;
+    const playerTwoName = document.querySelector(".playerTwoName").value;
+
+    playGame(playerOneName, playerTwoName)
+});
+
+cell.addEventListener("click", () => {
+
+});
+
 // playGame();
