@@ -98,7 +98,7 @@ function playGame(){
                     cell.textContent = 'X';
                     comment.textContent = `${p2.name}'s turn (O)`;
                     if(result){
-                        console.log(`winner is ${p1.name}`);
+                        displayWinner();
                         return;
                     }
                     turn = 2;
@@ -108,7 +108,7 @@ function playGame(){
                     cell.textContent = 'O';
                     comment.textContent = `${p1.name}'s turn (X)`;
                    if(result){
-                    console.log(`winner is ${p2.name}`);
+                    displayWinner();
                     return;
                    }
                     turn = 1;
@@ -117,6 +117,14 @@ function playGame(){
         });
     });
 
+    function displayWinner(){
+        if(game.getWinner() === 1)
+            comment.textContent = `${p1.name} WON!`;
+        else if (game.getWinner() === 2)
+            comment.textContent = `${p2.name} WON!`;
+        else
+            comment.textContent = `It is a TIE!`;
+    }
 }
 
 playGame();
