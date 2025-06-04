@@ -66,6 +66,8 @@ function playGame(){
     let p1 = new Player('player 1', 'x');
     let p2 = new Player('player 2', 'o');
     let turn = 1;
+    let counter = 0;
+
     function changeName(playerOneName, playerTwoName){
         p1 = new Player(playerOneName, 'x');
         p2 = new Player(playerTwoName, 'o');
@@ -76,7 +78,8 @@ function playGame(){
         game = new Gameboard();
         const playerOneName = document.querySelector(".playerOneName").value;
         const playerTwoName = document.querySelector(".playerTwoName").value;
-
+        counter = 0;
+        
         changeName(playerOneName, playerTwoName);
         comment.textContent = `${playerOneName}'s turn (X)`;
 
@@ -113,6 +116,10 @@ function playGame(){
                    }
                     turn = 1;
                 }
+                if(++counter === 9){
+                    displayWinner();
+                    return;
+                }
             }
         });
     });
@@ -124,6 +131,10 @@ function playGame(){
             comment.textContent = `${p2.name} WON!`;
         else
             comment.textContent = `It is a TIE!`;
+
+        document.querySelectorAll('.cell').forEach(e => {
+            e.classList.replace ("apled", "disapled");
+        });
     }
 }
 
