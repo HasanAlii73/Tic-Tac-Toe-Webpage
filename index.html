@@ -8,20 +8,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tic-Tac-Toe</h1>
+    <div class="header">
+        <h1>Tic Tac Toe</h1>
+    </div>
     <div class="playersContainer">
         <form class="frmPlayersName">
-            <div class="playerOne">
-                <label for="playerOneName">Player (X):</label>
-                <input type="text" name="playerOneName" class="playerOneName playerName" value="player 1">
+            <div class="textInput">
+                <div class="playerOne">
+                    <label for="playerOneName">Player (X)</label>
+                    <input type="text" name="playerOneName" class="playerOneName playerName" value="player 1">
+                </div>
+                <div class="playerTwo">
+                    <label for="playerTwoName">Player (O)</label>
+                    <input type="text" name="playerTwoName" class="playerTwoName playerName" value="player 2">
+                </div>
             </div>
-            <div class="playerTwo">
-                <label for="playerTwoName">Player (O):</label>
-                <input type="text" name="playerTwoName" class="playerTwoName playerName" value="player 2">
-            </div>
-            <button class="btnStart" type="submit">Start Game</button>
+            <div><button class="btnStart" type="submit">Start Game</button></div>
         </form>
-        <p class="comment">Select players and start the game</p>
+        <div>
+            <p class="comment">Select players and start the game</p>
+        </div>
     </div>
     <div class="gameContainer">
         <div class="cell disapled" data-index="0" ></div>

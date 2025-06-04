@@ -98,7 +98,7 @@ function playGame(){
 
                 if(turn === 1){
                     const result = game.playTurn(index, p1.mark);
-                    cell.textContent = 'X';
+                    cell.textContent = '✖️';
                     comment.textContent = `${p2.name}'s turn (O)`;
                     if(result){
                         displayWinner();
@@ -108,7 +108,7 @@ function playGame(){
                 }
                 else{
                     const result = game.playTurn(index, p2.mark);
-                    cell.textContent = 'O';
+                    cell.textContent = '⭕';
                     comment.textContent = `${p1.name}'s turn (X)`;
                    if(result){
                     displayWinner();

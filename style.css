@@ -1,21 +1,116 @@
+body{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(28, 28, 28);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 17px;
+}
+
+.header{
+    border-bottom: 2px solid ;
+    border-image: linear-gradient(to right, blue, red) 1;
+    padding-inline: 50px;
+}
+
+.frmPlayersName{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.textInput{
+    display: flex;
+    gap: 20px;
+}
+
+.playerOne, .playerTwo{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.playersContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.comment{
+    font-size: 20px;
+}
+
+input, button{
+    background-color: rgb(66, 66, 66);
+    color: white;
+    font-size: 17px;
+    border: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input{
+    padding: 8px;
+    width: 220px;
+}
+
+input:focus{
+    outline: none;
+    border: 1px solid blue;
+}
+
+button{
+    padding: 10px 50px;
+    cursor: pointer;;
+}
+
+button:hover{
+    background-color: rgb(49, 49, 49);
+     transition: background-color 0.3s ease-in-out;
+}
+
+button:active{
+    transform: scale(0.98);
+
+}
+
 .gameContainer{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    height: 120px;
-    width: 120px;
-    margin: 10px;
+    height: 350px;
+    width: 350px;
 }
+
 .cell{
-    border: 1px solid black;
+    border: 1px solid white;
     padding: 10px;
-    width: 20px;
-    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    transition: 0.4s;
+    text-shadow: 1px 1px 10px rgb(114, 114, 114);
 }
+
 .disapled{
     cursor: not-allowed;
+    background-color: rgb(28, 28, 28);
 }
+
 .apled{
     cursor: pointer;
-    background-color: green;
+    background-color: rgb(66, 66, 66);
+}
+
+.apled:active{
+    transform: scale(0.97);
+}
+
+.apled:hover{
+    background-color: rgb(49, 49, 49);
 }
