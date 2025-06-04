@@ -168,4 +168,3 @@ function playGame(){
 }
 
 playGame();
-// https://bit2swaz.github.io/tic-tac-toe/
