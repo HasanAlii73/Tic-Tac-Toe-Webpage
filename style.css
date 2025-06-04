@@ -70,12 +70,11 @@ button{
 
 button:hover{
     background-color: rgb(49, 49, 49);
-     transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 button:active{
     transform: scale(0.98);
-
 }
 
 .gameContainer{
@@ -86,8 +85,12 @@ button:active{
     width: 350px;
 }
 
+.gameContainer:hover{
+    transform: scale(0.99);
+}
+
 .cell{
-    border: 1px solid white;
+    border: 1px solid rgb(121, 121, 121);
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -104,13 +107,18 @@ button:active{
 
 .apled{
     cursor: pointer;
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(28, 28, 28);
 }
 
-.apled:active{
+.cell:active{
     transform: scale(0.97);
+    transition: 2s;
 }
 
 .apled:hover{
     background-color: rgb(49, 49, 49);
+}
+
+.winCell{
+    background-color: green;
 }

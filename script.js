@@ -4,6 +4,11 @@ const cell = document.querySelector(".cell");
 
 function Gameboard(){
     const gameboard = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    let winCells = {
+        i1 :-1,
+        i2 :-1,
+        i3:-1,
+    };
     let winner = 0;
 
     const changeValue = (index, value) =>{
@@ -18,10 +23,18 @@ function Gameboard(){
    
     const checkValue = (i1, i2, i3) => {
         if(gameboard[i1] === gameboard[i2] && gameboard[i2] === gameboard[i3]){
-            if(gameboard[i1] === 'x')
+            if(gameboard[i1] === 'x'){
                 winner = 1;
-            else
+                winCells.i1 = i1;
+                winCells.i2 = i2;
+                winCells.i3 = i3;
+            }
+            else{
                 winner = 2;
+                winCells.i1 = i1;
+                winCells.i2 = i2;
+                winCells.i3 = i3;
+            }
         }
         return winner;
     };
