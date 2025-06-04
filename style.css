@@ -119,6 +119,12 @@ button:active{
     background-color: rgb(49, 49, 49);
 }
 
+@keyframes cellPulse {
+  0% { background-color: rgb(49, 49, 49); }
+  50% { background-color: green; }
+  100% { background-color: rgb(49, 49, 49); }
+}
+
 .winCell{
-    background-color: green;
+    animation: cellPulse 2s infinite;
 }

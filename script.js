@@ -7,8 +7,9 @@ function Gameboard(){
     let winCells = {
         i1 :-1,
         i2 :-1,
-        i3:-1,
+        i3 :-1,
     };
+
     let winner = 0;
 
     const changeValue = (index, value) =>{
@@ -67,7 +68,9 @@ function Gameboard(){
 
     const getWinner = () => winner;
 
-    return {playTurn, getGameBoard, checkWinner, getWinner};
+    const getWinCells = () => winCells;
+
+    return {playTurn, getGameBoard, checkWinner, getWinner, getWinCells};
 }
 
 function Player(name, mark){
@@ -92,12 +95,14 @@ function playGame(){
         const playerOneName = document.querySelector(".playerOneName").value;
         const playerTwoName = document.querySelector(".playerTwoName").value;
         counter = 0;
+        turn = 1;
         
         changeName(playerOneName, playerTwoName);
         comment.textContent = `${playerOneName}'s turn (X)`;
 
         document.querySelectorAll('.cell').forEach(e => {
             e.classList.replace ("disapled", "apled");
+            e.classList.remove("winCell");
             e.textContent = "";
         });
     });
@@ -148,6 +153,17 @@ function playGame(){
         document.querySelectorAll('.cell').forEach(e => {
             e.classList.replace ("apled", "disapled");
         });
+
+        if(game.getWinner() === 1 || game.getWinner === 2){
+            // const cells = document.querySelectorAll(`.cell[data-index="0"],
+            //      .cell[data-index="1"], .cell[data-index="2"`);
+            const cells = document.querySelectorAll(`.cell[data-index="${game.getWinCells().i1}"],
+                 .cell[data-index="${game.getWinCells().i2}"], .cell[data-index="${game.getWinCells().i3}"]`);
+
+            cells.forEach(cell => {
+                cell.classList.add("winCell");
+            });
+        }
     }
 }
 
